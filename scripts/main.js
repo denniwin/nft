@@ -38,9 +38,12 @@ function price()
 {
   $.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC',
     function(data) {
-      nameBtc.textContent = data.data.BTC.name
-      nameEth.textContent = data.data.ETH.name
-      nameEtc.textContent = data.data.ETC.name
+      btc = data.data.BTC.name
+      eth = data.data.ETH.name
+      etc = data.data.ETC.name
+      nameBtc.textContent = btc
+      nameEth.textContent = eth
+      nameEtc.textContent = etc
       priceBtc.textContent = `${data.data.BTC.ohlc.c.toFixed(2)}$`
       priceEth.textContent = `${data.data.ETH.ohlc.c.toFixed(2)}$`
       priceEtc.textContent = `${data.data.ETC.ohlc.c.toFixed(2)}$`
@@ -80,15 +83,19 @@ function price()
 
   //Slider
   const swiper = new Swiper('.swiper', {
-    // Default parameters
     direction: "horizontal",
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 50,
     paginationClickable: 1,
     roundLengths: !0,
-    speed: 600,
+    loop:true,
+    speed: 800,
     grabCursor: !0,
     freeMode: !1,
+    centeredSlides:true,
+    autoplay: {
+      delay: 2000,
+    },
   
     pagination: {
       el: '.swiper-pagination',
@@ -123,7 +130,7 @@ function price()
       },
       // when window width is >= 640px
       640: {
-        slidesPerView: 1,
+        slidesPerView: 3,
         spaceBetween: 0
       }
     }
