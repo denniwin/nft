@@ -272,9 +272,7 @@ opacity: 1;
 
 .card__item, .swiper-slide {
   color: rgba(255, 255, 255, 0.161);
-  /* box-shadow: 0 -9px 20px rgb(0 0 0 / 26%); */
   padding: 10px;
-  /* flex-basis: 32%; */
   box-sizing: border-box;
   transition: .5s;
   -webkit-transition: .5s;
@@ -283,38 +281,18 @@ opacity: 1;
   -o-transition: .5s;
 }
 
-.swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical > .swiper-pagination-bullets {
-  right: 919px;
-  top: 59%;
-  transform: translate3d(0px, -50%, 0px);
-}
-
-.swiper-pagination-bullet {
-  padding: 10px;
-}
-
-.swiper-pagination-bullet:hover {
-
-  filter: brightness(120%);
-  -webkit-filter: brightness(120%);
-}
-
-.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
-  margin-bottom: 25px;
-  display: block;
-}
-
 .swiper-button-next, .swiper-rtl .swiper-button-prev {
-  right: 12px;
-  left: auto;
-  top: 37.3%;
+  right: 1.8%;
 }
 
 .swiper-button-prev, .swiper-rtl .swiper-button-next {
-  left: 17px;
-  right: auto;
-  top: 37.5%;
+  left: 1.8%;
 }
+
+.swiper-button-next, .swiper-button-prev {
+top: calc(100% - 400px);
+}
+
 
 .swiper-button-prev::after, .swiper-button-next::after {
   color: #e7e7e7;
@@ -323,8 +301,8 @@ opacity: 1;
 
 .wrapper__navigation-prev {
   position: absolute;
-  top: 34%;
-  left: 13px;
+  top: calc(100% - 420px);
+  left: 1.7%;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -338,8 +316,8 @@ opacity: 1;
 
 .wrapper__navigation-next {
   position: absolute;
-  top: 34%;
-  right: 10px;
+  top: calc(100% - 420px);
+  right: 1.7%;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -729,15 +707,7 @@ opacity: 1;
   .main__list {    
     gap: 95px;
   }
-
-  .swiper-button-next, .swiper-rtl .swiper-button-prev {
-    top: 33%;
-  }
   
-  .swiper-button-prev, .swiper-rtl .swiper-button-next {
-    top: 33%;
-  }
-
 .card__info, .company {
   text-align: center;
 }
@@ -785,7 +755,7 @@ padding: 30px 15px 48px;
 
 
 .swiper {
-  width: 333px;
+  width: 322px;
   height: 602px;
 }
 
@@ -851,15 +821,15 @@ padding: 30px 15px 48px;
 }
 
 .swiper-button-next, .swiper-rtl .swiper-button-prev {
-  right: -2px;
+  /* right: 1.6%;
   left: auto;
-  top: 34.5%;
+  top: 34.5%; */
 }
 
 .swiper-button-prev, .swiper-rtl .swiper-button-next {
-  left: -2px;
+  /* left: 8px;
   right: auto;
-  top: 34.5%;
+  top: 34.3%; */
 }
 
 .card__author {
