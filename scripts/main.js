@@ -16,10 +16,11 @@ for (i = 0; i < coll.length; i++) {
 //Плавный скролл
 $('a[href^="#"').on('click', function() {
   let href = $(this).attr('href');
-  $('html, body').animate({
-      scrollTop: $(href).offset().top
+  if (href != '#') {
+    $('html, body').animate({
+      scrollTop: $(href).offset().top - 150
   });
-  return false;
+  } else return false
 });
 
 //Запрос тикеров

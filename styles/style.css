@@ -305,16 +305,52 @@ opacity: 1;
 }
 
 .swiper-button-next, .swiper-rtl .swiper-button-prev {
-  right: 8px;
+  right: 12px;
   left: auto;
-  top: 37%;
+  top: 37.3%;
 }
 
 .swiper-button-prev, .swiper-rtl .swiper-button-next {
-  left: 10px;
+  left: 17px;
   right: auto;
-  top: 37%;
+  top: 37.5%;
 }
+
+.swiper-button-prev::after, .swiper-button-next::after {
+  color: #e7e7e7;
+  font-size: 30px;
+}
+
+.wrapper__navigation-prev {
+  position: absolute;
+  top: 34%;
+  left: 13px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #afb7cf6b;;
+  z-index: 9;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.wrapper__navigation-next {
+  position: absolute;
+  top: 34%;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #afb7cf6b;;
+  z-index: 9;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
 
 .img__sec {
   width: 300px;
@@ -344,6 +380,7 @@ opacity: 1;
 
 .card__img {
   height: 400px;
+  width: 321px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -531,7 +568,24 @@ opacity: 1;
 }
 
 .company__img {
-  height: 70px;
+  transition: all .6s;
+  height: 60px;
+  filter: grayscale(180);
+  -webkit-filter: grayscale(180);
+  -webkit-transition: all .6s;
+  -moz-transition: all .6s;
+  -ms-transition: all .6s;
+  -o-transition: all .6s;
+}
+
+.company__img:hover {
+  filter: initial;
+  -webkit-filter: initial;
+  transition: all .6s;
+  -webkit-transition: all .6s;
+  -moz-transition: all .6s;
+  -ms-transition: all .6s;
+  -o-transition: all .6s;
 }
 
 .header__buttons {
