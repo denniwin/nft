@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="./styles/normalise.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="spop.css" >
 </head>
 <body>
 
     <header class="header">
-        <a href="#" class="header__logo"></a>
+        <a href="#" class="header__logo "></a>
         <div class="form">
             <button class="form__button"></button>
             <input class="form__input" type="search" placeholder="Search items and collections">
@@ -48,59 +49,54 @@
                 </ul>
             </div>
                 <div class="main__image">
+
                     <img class="main__img" src="./images/gallery.jpg" alt="">
                 </div>
         </div>
         <div class="company">
-            <img class="company__img" src="./images/binance-exchange-seeklogo.com.svg" alt="binance">
-            <img class="company__img" src="./images/OpenSea.png" alt="eth">
-            <img class="company__img" src="./images/Blockchain.png" alt="Blockchain">
+            <img class="company__img scale-up-center" src="./images/binance-exchange-seeklogo.com.svg" alt="binance">
+            <img class="company__img scale-up-center" src="./images/OpenSea.png" alt="eth">
+            <img class="company__img scale-up-center" src="./images/Blockchain.png" alt="Blockchain">
         </div>
 </section>
 
 <section>
     <h2 id="featured" class="title">Featured Artworks</h2>
-    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="desc">Choose your destiny</p>
 <div class="swiper">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <!-- <div class="card__cover"> -->
-                <img class="card__img" src="./images/item2.jpeg" alt="">
-                <!-- </div> -->
+                <img class="card__img" src="./images/item1.jpg" alt="">
                 <div class="card__info">
                 <div>
-                    <p class="card__nick" id="name__btc">updating...</p>
+                    <p class="card__nick" id="name__nft_one">Secret Stones</p>
                     <p class="card__author">Yellow Painting</p>
                 </div>
-                <p class="card__bid">Current Bid<span class="card__price" id="price__btc">updating...</span></p>
+                <p class="card__bid">Current Bid<span class="card__price" id="price__nft_one" value="743">743$</span></p>
             </div>
-            <a href="#" class="card__link">Place a bid</a>
+            <div class="card__link">Buy this NFT</div>
         </div>
         <div class="swiper-slide">
-            <!-- <div class="card__cover"> -->
+        <img class="card__img" src="./images/item2.jpeg" alt="">
+            <div class="card__info">
+                <div>
+                    <p class="card__nick" id="name__nft_two">Nova Auroras</p>
+                    <p class="card__author">Yellow Painting</p>
+                </div>
+                <p class="card__bid">Current Bid<span class="card__price" id="price__nft_two" value="1543">1543$</span></p>
+            </div>
+            <div class="card__link">Buy this NFT</div>
+        </div>
+        <div class="swiper-slide">
         <img class="card__img" src="./images/item3.jpg" alt="">
-            <!-- </div> -->
             <div class="card__info">
                 <div>
-                    <p class="card__nick" id="name__eth">updating...</p>
+                    <p class="card__nick" id="name__nft_three">Dose of Art</p>
                     <p class="card__author">Yellow Painting</p>
                 </div>
-                <p class="card__bid">Current Bid<span class="card__price" id="price__eth">updating...</span></p>
+                <p class="card__bid">Current Bid<span class="card__price" id="price__nft_three" value="432">432$</span></p>
             </div>
-            <a href="#" class="card__link">Place a bid</a>
-        </div>
-        <div class="swiper-slide">
-            <!-- <div class="card__cover"> -->
-        <img class="card__img" src="./images/item1.jpg" alt="">
-            <!-- </div> -->
-            <div class="card__info">
-                <div>
-                    <p class="card__nick" id="name__etc">updating...</p>
-                    <p class="card__author">Yellow Painting</p>
-                </div>
-                <p class="card__bid">Current Bid<span class="card__price" id="price__etc">updating...</span></p>
-            </div>
-            <a href="#" class="card__link">Place a bid</a>
+            <div class="card__link">Buy this NFT</div>
         </div>
         
         </div>
@@ -110,6 +106,22 @@
         <div class="wrapper__navigation-next"></div>
 </div>
 </section>
+
+<section>
+    <div class="wrapper__feedback">
+        <div class="feedback__text">
+            <h1 id="feedback__title" class="title">FeedBack</h1>
+        </div>
+        <form class="feedback__input">
+            <input id="feed__back_name" class="form__input" type="text" placeholder="Name" required>
+            <input id="feed__back_number" class="form__input" type="tel" placeholder="Tel number">
+            <input id="feed__back_tiker" class="form__input" type="text" placeholder="Name NFT" readonly>
+            <input id="feed__back_words" class="form__input" type="text" placeholder="Price NFT" readonly>
+            <input id="feed__back_send" class="feed__back_send" type="submit" value="Send Message">
+        </form>
+    </div>
+</section>
+
 
 <section>
     <h2 id="freaquently" class="title">Freaquently Asked Question</h2>
@@ -150,27 +162,13 @@
     </div>
 </div>
 </section>
-<section>
-    <div class="wrapper__feedback">
-        <div class="feedback__text">
-            <h1 id="feedback__title" class="title">FeedBack</h1>
-        </div>
-        <form class="feedback__input">
-            <input id="feed__back_name" class="form__input" type="text" pattern = "[A-Za-z0-9]{6,}" title = "Логин не может быть короче шести латинских символов." placeholder="Name" required>
-            <input id="feed__back_words" class="form__input" type="text" placeholder="Few words">
-            <input id="feed__back_number" class="form__input" type="tel" pattern="\d{1,15}" placeholder="+7..." required>
-            <input id="feed__back_tiker" class="form__input" type="text" placeholder="btc,eth or etc">
-            <input id="feed__back_send" class="feed__back_send" type="submit" value="Send Message">
-        </form>
-    </div>
-</section>
-<div class="banner">
-    <h3 class="banner__title">Get ready to Collect</h3>
-    <a href="#" class="banner__link">Start!</a>
+
 </div>
-</div>
+<footer class="footer">(c) NFT check</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./scripts/main.js"></script>
+<script src="spop.js"></script>
 </body>
 </html>
