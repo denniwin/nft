@@ -75,6 +75,7 @@ body {
 
 section {
   margin-top: 30px;
+  margin-bottom: 100px;
 }
 
 .header {
@@ -116,7 +117,6 @@ section {
 
 .form__input {
   width: 384px;
-  background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 10px;
   padding: 10px 38px;
@@ -126,7 +126,6 @@ section {
 }
 
 .form__input::placeholder {
-  background: rgba(255, 255, 255, 0.1);
   border: none;
   background: transparent;
   color: rgba(255, 255, 255, 0.219);
@@ -504,6 +503,7 @@ section {
 .faq {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 100px;
 }
 
 .faq__item {
@@ -514,21 +514,59 @@ section {
   margin-top: 30px;
 }
 
-.feedback__input {
+.wrapper__feed {
+position: relative;
+}
+
+#feedback__input {
+  transition: 1s;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: space-around;
   align-items: center;
   flex-direction: column;
+
 }
 
-.feedback__input > .form__input {
+#feedback__input > .form__input {
   margin: 15px 15px;
   height: 50px;
   width: 500px;
 }
 
+#form__input2 {
+  transition: 1s;
+  position: absolute;
+  top: 71px;
+  left: 50%;
+  transform: translate(-50%);
+  display: none;
+  width: 499px;
+  height: 443px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 38px;
+  background: rgb(119 127 221 / 49%);
+  color: #fff;
+  font-size: 20px;
+  z-index: 1;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+#form__input2 > h1 {
+  text-align: center;
+}
+
+.wrap__button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+}
 .feed__back_send {
   background-color: transparent;
   color: white;
@@ -611,6 +649,7 @@ section {
   align-items: center;
   padding: 20px 15px 20px 15px;
 }
+
 
 @media (max-width: 1130px) {
   .header,
@@ -898,7 +937,7 @@ section {
     font-size: 20px;
   }
 
-  .feedback__input > .form__input {
+  #feedback__input > .form__input {
     margin: 15px 15px;
     height: 50px;
     width: 325px;
@@ -918,7 +957,7 @@ section {
     background: #b94639;
   }
 
-  .feedback__input > .form__input {
+  #feedback__input > .form__input {
     width: 295px;
   }
 }
