@@ -71,7 +71,7 @@ $('.card__link').on('click', function() {
 
 
 // Показать/скрыть окно перехода в тг
-$('#wrap__button_back').on('click', function() {
+$('.wrap__button_back').on('click', function() {
   $('.feedback__input').css("opacity", "1");
   $('#form__input2').css("display", "none");
 });
