@@ -3,6 +3,11 @@ let priceBtc = 100;
 let priceEth = 100;
 let priceEtc = 100
 let feedback__crypto;
+let listNft = {
+  'Secret Stones': 743,
+  'Nova Auroras': 1543,
+  'Dose of Art': 432,
+}
 
 
 //для меню
@@ -31,9 +36,31 @@ $('a[href^="#"').on('click', function() {
 });
 
 
+//Маска на форму номера телефона
+$('#feed__back_number').mask('8 (999) 999-99-99');
+
+//Маска на имя
+$('#feed__back_name').on('input', function(){
+	this.value = this.value.replace(/[^a-zа-яё\s]/gi, '');
+});
+
+//Запрета ввода всех символов в поле nft
+$('#feed__back_tiker').on('input', function(){
+  switch ($(this).val()) {
+    case 'Dose of Art': $('#feed__back_nft_price').val(listNft["Dose of Art"]);
+    break;
+    case 'Nova Auroras': $('#feed__back_nft_price').val(listNft["Nova Auroras"]);
+    break;
+    case 'Secret Stones': $('#feed__back_nft_price').val(listNft["Secret Stones"]);
+    break;
+    default: $('#feed__back_nft_price').val('');
+  }
+});
+
+
 //Добавить нфт в форму
 $('.card__link').on('click', function() {
-  $('html, body').animate({
+  $('html').animate({
     scrollTop: $('#feedback__title').offset().top
 });
   card__nick = $(this).parent().find('.card__nick').text();
@@ -43,32 +70,40 @@ $('.card__link').on('click', function() {
 });
 
 
-$('#back').on('click', function() {
-  $('#feedback__input').css("opacity", "1");
+// Показать/скрыть окно перехода в тг
+$('#wrap__button_back').on('click', function() {
+  $('.feedback__input').css("opacity", "1");
   $('#form__input2').css("display", "none");
 });
 
+//Импорт нфт из объекта
+$(function ($) {
+  for (let key in listNft) {
+		$('#nfts, .form__input_search').append(`<option value="${key}" label="${key}"></option>`)
+	}  
+})
 
 //Запрос текущей стоимости крипты (работает)
 $.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC',
-function(data) {
-priceBtc = data.data.BTC.ohlc.c.toFixed(2)
-priceEth = data.data.ETH.ohlc.c.toFixed(2)
-priceEtc = data.data.ETC.ohlc.c.toFixed(2)
+  function(data) {
+  priceBtc = data.data.BTC.ohlc.c.toFixed(2)
+  priceEth = data.data.ETH.ohlc.c.toFixed(2)
+  priceEtc = data.data.ETC.ohlc.c.toFixed(2)
   });
 
 
 
 // Отправка данных
   $(function ($) {
-    $("#feed__back_send").on('click', function (e) {
+    $(".feedback__input").on('submit', function (e) {
         e.preventDefault()
         feedback__name = $('#feed__back_name').val();
         feedback__tel = $('#feed__back_number').val();
         feedback__tiker = $('#feed__back_tiker').val();
         feedback__nft_price = $('#feed__back_nft_price').val();
         
-        if (!feedback__name) {
+        if (!feedback__name || feedback__name.length < 2) {
+
           spop({
             template: 'Please add your name',
             position: 'bottom-right',
@@ -140,12 +175,52 @@ priceEtc = data.data.ETC.ohlc.c.toFixed(2)
                 //     }); 
           }},
         })
-        $("#feedback__input").trigger('reset');
-        $('#feedback__input').css("opacity", "0");
+        $(".feedback__input").trigger('reset');
+        $('.feedback__input').css("opacity", "0");
         $('#form__input2').css("display", "block");
 }
     });
   });
+
+
+  //Отправка на почту
+
+
+    $(".from__subscribe_button").on('click', function (e) {
+      e.preventDefault()
+      email = $('.form__input_subscribe').val().trim().replace(/ +/g, "");
+      if (email.length > 4 && email.includes("@")) {
+      $.ajax({
+        url: "https://nft.rfixit.ru/conf/send.php",
+        method: "post",
+        dataType: "html",
+        data: {email},
+        success: function (data) {
+          if (data == "error") {
+            alert("Не удалось отправить");
+          } else {
+                spop({
+                template: '<h4 class="spop-title">You subscribe now</h4>',
+                position: 'bottom-right',
+                style: 'success',
+                autoclose: 5000
+                    }); 
+          }
+        },
+      })
+      $('.form__input_subscribe').val('')
+    } else {
+      spop({
+        template: '<h4 class="spop-title">Plese check your E-mail!</h4>',
+        position: 'bottom-right',
+        style: 'warning',
+        autoclose: 3000
+            }); 
+    }
+
+    });
+
+
 
   //Slider
   const swiper = new Swiper('.swiper', {
@@ -182,13 +257,13 @@ priceEtc = data.data.ETC.ohlc.c.toFixed(2)
   
     // Responsive breakpoints
     breakpoints: {
-      // when window width is >= 320px
-      320: {
+      // when window width is >= 100px
+      100: {
         slidesPerView: 1,
         spaceBetween: 0
       },
-      // when window width is >= 917px
-      917: {
+      // when window width is >= 600px
+      600: {
         slidesPerView: 3,
         spaceBetween: 0
       }
