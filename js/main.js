@@ -1,14 +1,13 @@
 //переменные
 let priceBtc = 100;
 let priceEth = 100;
-let priceEtc = 100
+let priceEtc = 100;
 let feedback__crypto;
 let listNft = {
   'Secret Stones': 743,
   'Nova Auroras': 1543,
   'Dose of Art': 432,
 }
-
 
 //для меню
 let coll = document.getElementsByClassName("collapsible");
@@ -25,6 +24,11 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+//Плавное появление страницы
+setTimeout(function(){
+	$('body').addClass('body_visible');
+}, 300);
+
 //Плавный скролл
 $('a[href^="#"').on('click', function() {
   let href = $(this).attr('href');
@@ -35,8 +39,7 @@ $('a[href^="#"').on('click', function() {
   } else return false
 });
 
-
-//Маска на форму номера телефона
+// //Маска на форму номера телефона
 $('#feed__back_number').mask('8 (999) 999-99-99');
 
 //Маска на имя
@@ -57,6 +60,8 @@ $('#feed__back_tiker').on('input', function(){
   }
 });
 
+//Copy
+$('.copyright').text('NFT Check')
 
 //Добавить нфт в форму
 $('.card__link').on('click', function() {
@@ -68,7 +73,6 @@ $('.card__link').on('click', function() {
   $('#feed__back_tiker').val(card__nick)
   $('#feed__back_nft_price').val(card__price)
 });
-
 
 // Показать/скрыть окно перехода в тг
 $('.wrap__button_back').on('click', function() {
@@ -90,8 +94,6 @@ $.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC
   priceEth = data.data.ETH.ohlc.c.toFixed(2)
   priceEtc = data.data.ETC.ohlc.c.toFixed(2)
   });
-
-
 
 // Отправка данных
   $(function ($) {
@@ -132,29 +134,6 @@ $.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC
 
         if (feedback__name && feedback__tel && feedback__tiker && feedback__nft_price) {
 
-          //Запрос котировок, не работает, спросить почему
-          // $.ajax({
-          //   url: 'https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC', 
-          //   method: 'get',
-          //   dataType: 'json',
-          //   success: function(data){ 
-          //     priceBtc = data.data.BTC.ohlc.c.toFixed(2)
-          //     priceEth = data.data.ETH.ohlc.c.toFixed(2)
-          //     priceEtc = data.data.ETC.ohlc.c.toFixed(2)
-          //     console.log(priceBtc)
-          //   },
-          //   error: function (exception) {
-          //     console.log(exception)
-          //     if (exception === 'error' || exception === 'parsererror') {
-          //       priceBtc = 20000
-          //       priceEth = 1500
-          //       priceEtc = 35  
-          //     }
-          // }
-          // });
-          //console.log(priceBtc) вот тут уже не видна переменная, хотя глобально обозначена.
-
-
           feedback__crypto = `The cost of your ${feedback__tiker} in <strong>BTC:</strong> ${(feedback__nft_price / priceBtc).toFixed(4)}, <i>ETH:</i> ${(feedback__nft_price / priceEth).toFixed(4)}, ETC: ${(feedback__nft_price / priceEtc).toFixed(4)}`;
 
           //Отправка в телеграм данных
@@ -166,13 +145,6 @@ $.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC
             success: function (data) {
               if (data == "error") { alert("Не удалось отправить") } 
               else {
-                // location.assign('https://t.me/+sC81hFOz7jk0MGEy')
-                // spop({
-                // template: '<h4 class="spop-title">Message sent to</h4><a href="https://t.me/+sC81hFOz7jk0MGEy">Telegram</a>',
-                // position: 'bottom-right',
-                // style: 'success',
-                // autoclose: 5000
-                //     }); 
           }},
         })
         $(".feedback__input").trigger('reset');
@@ -182,12 +154,9 @@ $.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC
     });
   });
 
-
   //Отправка на почту
-
-
-    $(".from__subscribe_button").on('click', function (e) {
-      e.preventDefault()
+    $(".from__subscribe").on('submit', function (e) {
+        e.preventDefault()
       email = $('.form__input_subscribe').val().trim().replace(/ +/g, "");
       if (email.length > 4 && email.includes("@")) {
       $.ajax({
@@ -217,11 +186,9 @@ $.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC
         autoclose: 3000
             }); 
     }
-
     });
 
-
-
+  
   //Slider
   const swiper = new Swiper('.swiper', {
     direction: "horizontal",
@@ -249,7 +216,6 @@ $.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC
       prevEl: '.swiper-button-prev',
     },
 
-  
     scrollbar: {
       el: '.swiper-scrollbar',
       draggable: true,
@@ -270,25 +236,3 @@ $.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC,ETH,ETC
     }
   
   })
-
-
-// document.querySelectorAll('.header__logo').forEach((elem) => {
-
-// 	elem.onmouseenter = elem.onmouseleave = (e) => {
-//     console.log(elem)
-
-// 		const tolerance = 10
-
-// 		const left = 0
-// 		const right = elem.clientWidth
-//     console.log(e.pageX)
-//     console.log(elem.offsetLeft)
-
-// 		let x = e.pageX - elem.offsetLeft
-//     console.log(x)
-// 		if (x - tolerance < left) x = left
-// 		if (x + tolerance > right) x = right
-// 		elem.style.setProperty('--x', `${ x }px`)
-//   }
-
-// })
