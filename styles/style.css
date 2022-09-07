@@ -108,6 +108,7 @@ section {
   margin-bottom: 100px;
 }
 
+
 .header {
   max-width: 1197px;
   margin: 0 auto;
@@ -169,7 +170,7 @@ input[type='text']::-webkit-calendar-picker-indicator {
 .form__input_subscribe::placeholder {
   border: none;
   background: transparent;
-  color: rgba(255, 255, 255, 0.219);
+  color: rgba(255, 255, 255, 0.447);
   font-size: 20px;
 }
 
@@ -246,7 +247,7 @@ input[type='text']::-webkit-calendar-picker-indicator {
 .main__desc {
   font-size: 20px;
   line-height: 1.8;
-  color: #ffffff58;
+  color: #ffffff96;
   margin-top: 0;
   margin-bottom: 41px;
 }
@@ -580,14 +581,13 @@ input[type='text']::-webkit-calendar-picker-indicator {
   left: 50%;
   transform: translate(-50%);
   display: none;
-  width: 499px;
-  height: 443px;
+  width: 90%;
   border: none;
   border-radius: 10px;
-  padding: 10px 38px;
-  background: rgb(119 127 221 / 49%);
+  padding: 25px;
+  background: rgb(176 182 255 / 22%);
   color: #fff;
-  font-size: 20px;
+  font-size: 16px;
   z-index: 1;
   -webkit-transition: 1s;
   -moz-transition: 1s;
@@ -602,6 +602,7 @@ input[type='text']::-webkit-calendar-picker-indicator {
 .wrap__button {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .feed__back_send {
@@ -1057,3 +1058,11 @@ input[type='text']::-webkit-calendar-picker-indicator {
   }
 
 }
+
+
+
+
+
+
+
+
