@@ -33,11 +33,11 @@ try {
 
     // Настройки вашей почты
     $mail->Host       = 'ssl://smtp.mail.ru'; // SMTP сервера вашей почты
-    $mail->Username   = 'nft.test@internet.ru'; // Логин на почте
-    $mail->Password   = 'ECapVsRJt3DrWnCjzYph'; // Пароль на почте
+    $mail->Username   = 'nft'; // Логин на почте
+    $mail->Password   = 'E'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('nft.test@internet.ru', 'NFT Check'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('nft', 'NFT Check'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
     $mail->addAddress($email);  
