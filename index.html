@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT</title>
+    <link rel="icon" href="./images/favicon-16x16.png" type="image/png" />
+    <link rel="stylesheet" href="./styles/normalise.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="spop.css" />
+  </head>
+  <body class="body_hide">
+    <header class="header">
+      <a href="#" class="header__logo"></a>
+      <div class="form">
+        <!-- <button class="form__button"></button> -->
+        <input
+          class="form__input_search"
+          type="text"
+          list="nfts"
+          placeholder="Search items and collections"
+        />
+        <datalist id="nfts"></datalist>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link" href="#feedback__title">Feedback</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#featured">Feature</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#freaquently">FAQ</a>
+          </li>
+          <li class="header__item">
+            <a
+              class="header__link_last header__link_gradient"
+              href="https://www.binance.com/ru/nft/"
+              target="_blank"
+              >More NFT</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <section>
+        <div class="main">
+          <div class="main__text">
+            <h1 class="main__title">
+              Create, Sell & Collect Your Own Creative NFT
+            </h1>
+            <p class="main__desc">
+              A type of cryptographic token, each instance of which is unique
+              and cannot be exchanged or substituted for another similar token,
+              although tokens are usually fungible in nature
+            </p>
+            <div class="wrapper__btn">
+              <a class="main__btn main__btn_gradient" href="#featured"
+                >Explore Now</a
+              >
+            </div>
+            <ul class="main__list">
+              <li class="main__item">
+                <span class="main__span">37K+</span>Artworks
+              </li>
+              <li class="main__item">
+                <span class="main__span">20K+</span>Artists
+              </li>
+              <li class="main__item">
+                <span class="main__span">99K+</span>Aucation
+              </li>
+            </ul>
+          </div>
+          <div class="main__image">
+            <img class="main__img" src="./images/gallery.jpg" alt="gallery" />
+          </div>
+        </div>
+        <div class="company">
+          <img
+            class="company__img scale-up-center"
+            src="./images/binance-exchange-seeklogo.com.svg"
+            alt="binance"
+          />
+          <img
+            class="company__img scale-up-center"
+            src="./images/OpenSea.png"
+            alt="eth"
+          />
+          <img
+            class="company__img scale-up-center"
+            src="./images/Blockchain.png"
+            alt="Blockchain"
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2 id="featured" class="title">Featured Artworks</h2>
+        <p class="desc">Choose your destiny</p>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="card__img" src="./images/item1.jpg" alt="item1" />
+              <div class="card__info">
+                <article>
+                  <p class="card__nick" id="name__nft_one">Secret Stones</p>
+                  <p class="card__author">Yellow Painting</p>
+                </article>
+                <article>
+                  <p class="card__bid">
+                    Current Bid<span
+                      class="card__price"
+                      id="price__nft_one"
+                      value="743"
+                      >743$</span
+                    >
+                  </p>
+                </article>
+              </div>
+              <a href="#" class="card__link">Buy this NFT</a>
+            </div>
+            <div class="swiper-slide">
+              <img class="card__img" src="./images/item2.jpeg" alt="item2" />
+              <div class="card__info">
+                <article>
+                  <p class="card__nick" id="name__nft_two">Nova Auroras</p>
+                  <p class="card__author">Yellow Painting</p>
+                </article>
+                <article>
+                  <p class="card__bid">
+                    Current Bid<span
+                      class="card__price"
+                      id="price__nft_two"
+                      value="1543"
+                      >1543$</span
+                    >
+                  </p>
+                </article>
+              </div>
+              <a href="#" class="card__link">Buy this NFT</a>
+            </div>
+            <div class="swiper-slide">
+              <img class="card__img" src="./images/item3.jpg" alt="item3" />
+              <div class="card__info">
+                <article>
+                  <p class="card__nick" id="name__nft_three">Dose of Art</p>
+                  <p class="card__author">Yellow Painting</p>
+                </article>
+                <article>
+                  <p class="card__bid">
+                    Current Bid<span
+                      class="card__price"
+                      id="price__nft_three"
+                      value="432"
+                      >432$</span
+                    >
+                  </p>
+                </article>
+              </div>
+              <a href="#" class="card__link">Buy this NFT</a>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+
+      <section class="wrapper__feed">
+        <div id="form__input2">
+          <h1>Know your profit, now!</h1>
+          <div class="wrap__button">
+            <a
+              href="https://t.me/+sC81hFOz7jk0MGEy"
+              target="_blank"
+              class="main__btn main__btn_gradient"
+              >See result in telegram</a
+            >
+            <button class="wrap__button_back main__btn main__btn_gradient">
+              Back to form
+            </button>
+          </div>
+        </div>
+        <div class="wrapper__feedback">
+          <div class="feedback__text">
+            <h1 id="feedback__title" class="title">FeedBack</h1>
+          </div>
+
+          <form class="feedback__input">
+            <input
+              id="feed__back_name"
+              class="form__input"
+              type="text"
+              maxlength="20"
+              placeholder="Name"
+            />
+            <input
+              id="feed__back_number"
+              class="form__input"
+              type="text"
+              placeholder="Tel number"
+            />
+            <input
+              id="feed__back_tiker"
+              class="form__input"
+              type="text"
+              list="nfts"
+              placeholder="Name NFT"
+            />
+            <datalist id="nfts"></datalist>
+            <input
+              id="feed__back_nft_price"
+              class="form__input"
+              type="text"
+              placeholder="Price NFT"
+              readonly
+            />
+            <input class="feed__back_send" type="submit" value="Send Message" />
+          </form>
+        </div>
+      </section>
+
+      <section>
+        <h2 id="freaquently" class="title">Freaquently Asked Question</h2>
+        <p class="desc">
+          Here you will get answers to frequently asked questions.
+        </p>
+        <div class="faq">
+          <div class="faq__item">
+            <button class="collapsible">What's your name?</button>
+            <div class="content">
+              <p>I'm Den, frontend developer.</p>
+            </div>
+
+            <button class="collapsible">Hard skills</button>
+            <div class="content">
+              <p>HTML5 => JS => React</p>
+            </div>
+
+            <button class="collapsible">More about</button>
+            <div class="content">
+              <p>HTML5, SCSS, React</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="collapsible">CodeWars</button>
+            <div class="content">
+              <p>
+                Yes,
+                <a
+                  class="header__link"
+                  href="https://www.codewars.com/users/denniwin"
+                  target="_blank"
+                  >tap to Codewars</a
+                >
+              </p>
+            </div>
+
+            <button class="collapsible">GitHub</button>
+            <div class="content">
+              <p>
+                Yes,
+                <a
+                  class="header__link"
+                  href="https://github.com/denniwin/"
+                  target="_blank"
+                  >tap to GitHub</a
+                >
+              </p>
+            </div>
+
+            <button class="collapsible">Feedback</button>
+            <div class="content">
+              <p>
+                <a
+                  class="header__link"
+                  href="https://t.me/krocop"
+                  target="_blank"
+                  >pls write me</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="copyright">(c) NFT check</div>
+      <div class="subscribe">
+        <form class="from__subscribe">
+          <input
+            class="form__input_subscribe"
+            type="email"
+            placeholder="Subscribe Me (E-Mail)"
+          />
+          <input type="submit" class="from__subscribe_button" value="Ok" />
+        </form>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/jquery.maskedinput.min.js"></script>
+    <script src="./js/spop.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
